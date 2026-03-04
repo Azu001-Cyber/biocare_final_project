@@ -42,7 +42,7 @@ class CustomUser(AbstractUser):
     gender = models.CharField(max_length=3, choices=GENDER_CHOICES, default=NonSpecify, null=True)
 
     def __str__(self):
-        return self.name
+        return self.username
     ...
 
 
