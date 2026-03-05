@@ -26,21 +26,21 @@ export default function Footer () {
                 <div>
                     <h4 className="font-semibold text-slate-800 mb-4">Quick Links</h4>
                     <ul className="space-y-2 text-sm text-slate-600 font-semibold">
-                    <li><a href="/" className="hover:text-blue-600 transition">Home</a></li>
-                    <li><a href="/" className="hover:text-blue-600 transition">Search</a></li>
-                    <li><a href="/about" className="hover:text-blue-600 transition">About</a></li>
-                    <li><a href="/contact" className="hover:text-blue-600 transition">Contact</a></li>
+                    <li><a href="/" className="hover:text-teal-600 transition">Home</a></li>
+                    <li><a href="/" className="hover:text-teal-600 transition">Search</a></li>
+                    <li><a href="/about" className="hover:text-teal-600 transition">About</a></li>
+                    <li><a href="/contact" className="hover:text-teal-600 transition">Contact</a></li>
                     </ul>
                 </div>
 
                 {/* Account */}
                 <div>
-                    <h4 className="font-semibold text-slate-800 mb-4 ">Account</h4>
+                    <h4 className="font-semibold text-slate-800 mb-4">Account</h4>
                     <ul className="space-y-2 text-sm text-slate-600 font-semibold">
-                    <li><a href="/login" className="hover:text-blue-600 transition">Login</a></li>
-                    <li><a href="/signup" className="hover:text-blue-600 transition">Sign Up</a></li>
-                    <li><a href="/profile" className="hover:text-blue-600 transition">Profile</a></li>
-                    <li><a href="/saved" className="hover:text-blue-600 transition">Saved</a></li>
+                    <li><a href="/login" className="hover:text-teal-600 transition">Login</a></li>
+                    <li><a href="/signup" className="hover:text-teal-600 transition">Sign Up</a></li>
+                    <li><a href="/profile" className="hover:text-teal-600 transition">Profile</a></li>
+                    <li><a href="/saved" className="hover:text-teal-600 transition">Saved</a></li>
                     </ul>
                 </div>
 
@@ -48,9 +48,9 @@ export default function Footer () {
                 <div>
                     <h4 className="font-semibold text-slate-800 mb-4">Legal</h4>
                     <ul className="space-y-2 text-sm text-slate-600 font-semibold">
-                    <li><a href="/privacy" className="hover:text-blue-600 transition">Privacy Policy</a></li>
-                    <li><a href="/terms" className="hover:text-blue-600 transition">Terms of Service</a></li>
-                    <li><a href="/disclaimer" className="hover:text-blue-600 transition">Medical Disclaimer</a></li>
+                    <li><a href="/privacy" className=" hover:text-teal-600 transition">Privacy Policy</a></li>
+                    <li><a href="/terms" className=" hover:text-teal-600 transition">Terms of Service</a></li>
+                    <li><a href="/disclaimer" className=" hover:text-teal-600 transition">Medical Disclaimer</a></li>
                     </ul>
                 </div>
 

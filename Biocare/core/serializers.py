@@ -27,7 +27,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
 
         # Assigned default group
 
-        group = Group.object.get(name='Regular User')
+        group = Group.objects.get(name='Regular User')
         user.groups.add(group)
 
         return user

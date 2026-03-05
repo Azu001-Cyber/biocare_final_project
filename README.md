@@ -18,7 +18,7 @@ This product was developed as part of internship delivevables and demonstrates m
 ## Tech Stack
 
 ### Backend
-- **Pyhton**
+- **Python**
 - **Django**
 - **Django Rest Framework**
 
@@ -27,9 +27,6 @@ This product was developed as part of internship delivevables and demonstrates m
 - **React Router DOM**
 - **Tailwind CSS**
 - **Lucide-React (Icons)**
-
-### Database
-- Default Django DB (SQLite) for development (can be replaced with PostgreSQL)
 
 ### Database
 - Default Django DB (SQLite) for development (can be replaced with PostgreSQL)
@@ -101,7 +98,7 @@ cd biocare_frontend
 ```
 npm install
 ```
-# Install Node Dependencies
+# Start Development Server
 
 ```
 npm run dev

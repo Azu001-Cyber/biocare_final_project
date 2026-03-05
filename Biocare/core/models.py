@@ -72,9 +72,9 @@ class Disease(models.Model):
         ## GIN index
         - for large datasets this makes full-text search super fast 
         """
-        indexes = [
-            GinIndex(fields=['name', 'symptoms', 'causes', 'prevention', 'treatment']) # pass in the fields
-        ]
+        # indexes = [
+        #     GinIndex(fields=['name', 'symptoms', 'causes', 'prevention', 'treatment']) # pass in the fields
+        # ]
     
     def __str__(self):
         return self.name

@@ -140,6 +140,7 @@ AUTH_USER_MODEL = 'core.CustomUser'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://biocare-final-project-4vyt.vercel.app",
     # "https://your-frontend-domain.com",
     # Add other allowed origins as needed
 ]

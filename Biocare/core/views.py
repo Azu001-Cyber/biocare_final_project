@@ -1,5 +1,5 @@
 # from django.shortcuts import render
-from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
 from rest_framework import viewsets
 from .models import Disease
 from .serializers import DiseaseSerializer
@@ -22,33 +22,32 @@ class DiseaseViewSet(viewsets.ModelViewSet):
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve', 'search']:
-            return [IsAuthenticated()]
+            return [AllowAny()] #temporarily change permission access for testing.
         return [IsAdminUser()]
     
+   # views.py
+from rest_framework.decorators import action
+from rest_framework.response import Response
+from .serializers import DiseaseSerializer
+
+class DiseaseViewSet(viewsets.ModelViewSet):
+    queryset = Disease.objects.all()
+    serializer_class = DiseaseSerializer
+
+    def get_permissions(self):
+        if self.action in ['list', 'retrieve', 'search', 'check_symptoms']:
+            return [AllowAny()]  # no auth for MVP
+        return [IsAdminUser()]
+
     @action(detail=False, methods=['get'])
     def search(self, request):
-        q = request.query_params.get('q')
-
+        q = request.query_params.get('q', '').strip()
         if not q:
-            return Response(
-                {"detail": "Query parameter 'q' is required."},
-                status=status.HTTP_400_BAD_REQUEST)
-        
-        search_vector = (
-            SearchVector('name', weight='A')+
-            SearchVector('symptoms', weight='B')+ 
-            SearchVector('causes', weight='C') +
-            SearchVector('prevention', weight='D') +
-            SearchVector('treatment', weight='D')
-        )
+            return Response([], status=200)
 
-        search_query = SearchQuery(q)
-        
-        qs = self.queryset.annotate(
-            rank = SearchRank(search_vector, search_query,)
-        ).filter(rank__gte=0.1).order_by('-rank')
-
-        serializer = self.get_serializer(qs, many=True)
+        # simple filter for SQLite
+        qs = self.queryset.filter(name__icontains=q)
+        serializer = DiseaseSerializer(qs, many=True)
         return Response(serializer.data)
     
     @action(detail=False, methods=['POST'])

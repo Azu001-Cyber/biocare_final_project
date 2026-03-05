@@ -1,12 +1,14 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { ArrowBigLeftIcon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function DiseaseDetails() {
     const { id } = useParams();
     const [disease, setDisease] = useState(null);
 
     useEffect(() => {
-        fetch(`/api/diseases/${id}`)
+        fetch(`http://127.0.0.1:8000/api/diseases/${id}/`)
         .then((res) => res.json())
         .then((data) => setDisease(data));
     }, [id]);
@@ -32,6 +34,7 @@ export default function DiseaseDetails() {
 }
 
 function Section({ title, content }) {
+    const navigate = useNavigate();
     return (
         <div className="mb-8">
         <h2 className="text-xl font-semibold text-slate-800 mb-2">
@@ -41,5 +44,6 @@ function Section({ title, content }) {
             {content}
         </p>
         </div>
+        
     );
 }
