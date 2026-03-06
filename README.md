@@ -108,3 +108,6 @@ By default, the frontend will run at:
 ```
 http://localhost:5173/
 ```
+<video src="/biocare_frontend/src/assets/Screen Recording 2026-03-06 072741.mp4" width="600" controls>
+
+</video>
